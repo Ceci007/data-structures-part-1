@@ -1,8 +1,7 @@
 /*
-** dadas dos cadenas de texto, escribe una función para determinar si 
-** la segunda cadena de texto es un anagrama de la primera.
-** un anagrama es una palabra, frase, o nombre formado reacomodando 
-** las letras de la otra, como "quieren", formada desde "Enrique".
+** Given two strings, write a function to determine if the second string
+** is an anagram of the first. An anagram is a word, phrase or name formed
+** by rearranging the letters of another, such as cinema, form from iceman.
 ** ------------------------------------------------------------------------
 ** input: ('', ''), output: true
 **

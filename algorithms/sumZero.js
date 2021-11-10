@@ -1,9 +1,8 @@
 /*
-** Escribe una función llamada sumZero que acepta un arreglo de enteros ordenado 
-** en forma creciente.
-** La función deberia encontrar el primer par de elementos donde la suma es cero. 
-** Devuelve un arreglo que incluya ambos valores que sumados dan cero de lo 
-** contrario devuelve "undefined" si el par no existe.
+** Write a function called "sumZero", which accepts a sorted array of integers.
+** The function should find the first pair of elements where the sum is zero.
+** Return an array which includes both values, otherwise return "undefined" if
+** the pair doesn't exist. 
 ** ---------------------------------------------------------------------------------
 **
 ** input: [-4, -3, -2, -1, 0, 1, 2, 5], output: [-2, 2]

@@ -1,10 +1,7 @@
 /* 
-** Implementa una función llamada countUniqueValues, 
-** la cual acepta un arreglo ordenado en forma ascendente y cuenta 
-** los valores unicos existentes en el arreglo. 
-** tambien cuenta los elementos repetidos pero solo una vez.
-** Pueden haber numeros negativos 
-** pero con la condición de que el arreglo siempre estara ordenado.
+** Implement a function called "countUniqueValues", which accepts a sorted
+** array, and counts the unique values in the array. There can be negatives
+** numbers in the array, but it will always be sorted.
 ** -----------------------------------------------------------------------------
 ** 
 ** input: ([1, 2, 2, 5, 7, 7, 11, 11, 11, 17, 99]), output: 7

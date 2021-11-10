@@ -1,8 +1,8 @@
 /*
-** Escribe una función llamada "same", que acepta como argumentos dos arreglos.
-** La función deberia retornar verdadero si cada valor en el arreglo tiene sus
-** valores correspondientes elevados al cuadrado en el segundo arreglo.
-** La frecuencia de los valores debe ser la misma.
+** Write a function called "same", which accepts as arguments two arrays.
+** The function should return true if every value in the first array has their 
+** correspondent values squared in the second array.
+** The frequency should be the same.
 ** ------------------------------------------------------------------------------
 **
 ** input: ([1, 2, 3], [1, 4, 9]), output: true
