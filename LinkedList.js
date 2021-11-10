@@ -1,32 +1,50 @@
 /*
 ** Create a class with a constructor that initializes an empty array, nodes, 
 ** for each instance.
+**
 ** Define a size getter, that returns that uses Array.prototype.length to 
 ** return the number of elements in the nodes array.
-** Define a node getter, that returns the first element of the nodes array 
+**
+** Define a head getter, that returns the first element of the nodes array 
 ** or null if empty.
-** Define a nextNode getter, that returns the last element of the nodes array 
+**
+** Define a tail getter, that returns the last element of the nodes array 
 ** or null if empty.
+**
 ** Define an insertAt() method, which uses Array.prototype.splice() to add 
 ** a new object in the nodes array, updating the next key of the previous element.
+**
 ** Define two convenience methods, insertFirst() and insertLast() that use 
 ** the insertAt() method to insert a new element at the start or end of the 
 ** nodes array respectively.
+**
 ** Define a getAt() method, which retrieves the element in the given index.
+**
 ** Define a removeAt() method, which uses Array.prototype.splice() to remove 
 ** an object in the nodes array, updating the next key of the previous element.
+**
+** Create a removeFirst() and removeLast() methos using the removeAt() method as base.
+**
 ** Create an indexOf() method similar to what arrays have.
+**
 ** Create a contains() method that evaluates to true if the item exist in the list
 ** and false otherwise.
-** Create a removeFirst() and removeLast() methos using the removeAt() method as base.
+**
 ** Define a clear() method, which empties the nodes array.
+**
 ** convert the LinkedList in an array with a method called toArray().
+**
+** ------------------------ harder below --------------------------------
 ** Define a reverse() method, which uses Array.prototype.reduce() and the 
 ** spread operator (...) to reverse the order of the nodes array, updating 
 ** the next key of each element appropriately.
+**
 ** Find the Kth node from the end of a linked list in one pass.
+**
 ** Find the middle of a linked list in one pass.
+**
 ** Check to see if a linked list has a loop.
+**
 ** Define a generator method for Symbol.iterator, which delegates to the nodes 
 ** array's iterator using the yield* syntax.
 */
@@ -93,31 +111,11 @@ class LinkedList {
     return this.nodes.splice(index, 1);
   }
 
-  indexOf(value) {
-    let i = 0;
-    let node = this.nodes[i] || null;
-
-    for(i; i < this.nodes.length; i++) {
-      if(node !== null) {
-        if(node.value === value) return i;
-        node = node.next;
-      }
-    }
-
-    return -1;
-  }
-
-  contains(value) {
-    return this.indexOf(value) !== -1;
-  }
-
   removeFirst() {
-    if(this.#isEmpty()) throw Error("List is still empty");
     this.removeAt(0);
   }
 
   removeLast() {
-    if(this.#isEmpty()) throw Error("List is still empty");
     this.removeAt(this.nodes.length - 1);
   }
 
@@ -150,6 +148,24 @@ class LinkedList {
   } 
   */
 
+  indexOf(value) {
+    let i = 0;
+    let node = this.nodes[i] || null;
+
+    for(i; i < this.nodes.length; i++) {
+      if(node !== null) {
+        if(node.value === value) return i;
+        node = node.next;
+      }
+    }
+
+    return -1;
+  }
+
+  contains(value) {
+    return this.indexOf(value) !== -1;
+  }
+
   clear() {
     this.nodes = [];
   }
@@ -172,13 +188,14 @@ class LinkedList {
 
     let node = this.nodes[0];
     let nextNode = this.nodes[0];
+    const tail = this.nodes[this.nodes.length - 1]
 
     for(let i = 0; i < k - 1; i++) {
       nextNode = nextNode.next;
       //if(nextNode === null) throw Error("Kth is too large");
     }
 
-    while(nextNode !== this.nodes[this.nodes.length - 1]) {
+    while(nextNode !== tail) {
       node = node.next;
       nextNode = nextNode.next;
     }
